@@ -1,6 +1,7 @@
 import reactLogo from "./assets/react.svg";
 import "./App.css";
 import { useSelector, useDispatch } from "react-redux";
+import { Button } from "./components";
 // eslint-disable-next-line no-unused-vars
 function App(props) {
   const store = useSelector(state => state);
@@ -18,12 +19,14 @@ function App(props) {
       </div>
       <h1>count is {store.count}</h1>
       <div className="card">
-        <button onClick={() => dispatch({ type: "DECREMENT" })}>
-          Decrease
-        </button>
-        <button onClick={() => dispatch({ type: "INCREMENT" })}>
-          Increase
-        </button>
+        <Button
+          text="Increament"
+          onClick={() => dispatch({ type: "INCREMENT" })}
+        />
+        <Button
+          text="Decreament"
+          onClick={() => dispatch({ type: "DECREMENT" })}
+        />
         <p>
           Edit <code>src/App.jsx</code> and save to test HMR
         </p>
